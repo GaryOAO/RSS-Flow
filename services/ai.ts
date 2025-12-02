@@ -72,9 +72,9 @@ export const generateDailyDigest = async (articles: any[], settings: AppSettings
     const articleList = articles.map(a => {
         let snippet = a.contentSnippet || '';
         if (!snippet && a.content) {
-            snippet = a.content.replace(/<[^>]*>/g, ' ').substring(0, 300);
-        } else if (snippet.length > 300) {
-            snippet = snippet.substring(0, 300);
+            snippet = a.content.replace(/<[^>]*>/g, ' ').substring(0, 200);
+        } else if (snippet.length > 200) {
+            snippet = snippet.substring(0, 200);
         }
         // Clean up whitespace
         snippet = snippet.replace(/\s+/g, ' ').trim();

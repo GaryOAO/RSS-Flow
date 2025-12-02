@@ -37,7 +37,7 @@ RSS Flow is a modern, clean, and feature-rich RSS reader built with React, Vite,
 
 1.  Clone the repository:
     ```bash
-    git clone https://github.com/yourusername/rss-flow.git
+    git clone https://github.com/GaryOAO/rss-flow.git
     cd rss-flow
     ```
 
@@ -72,7 +72,7 @@ RSS Flow is a modern, clean, and feature-rich RSS reader built with React, Vite,
 ## Configuration
 
 ### AI Features
-To use the AI summarization features, you need to provide a Google Gemini API Key in the settings menu within the app.
+To use the AI summarization features, you need to provide a API Key in the settings menu within the app.
 
 ## License
 
