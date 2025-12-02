@@ -1,7 +1,20 @@
 {
   "name": "rss-flow",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.1.1",
+  "description": "A modern, distraction-free RSS reader with E-ink optimization and AI-powered summarization.",
+  "keywords": [
+    "rss-reader",
+    "react",
+    "vite",
+    "capacitor",
+    "e-ink",
+    "ai",
+    "openai",
+    "typescript"
+  ],
+  "author": "GaryOAO",
+  "license": "MIT",
   "type": "module",
   "scripts": {
     "dev": "vite",
