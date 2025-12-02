@@ -1,0 +1,109 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --safe-top: env(safe-area-inset-top, 0px);
+        --safe-bottom: env(safe-area-inset-bottom, 0px);
+    }
+
+    html {
+        -webkit-tap-highlight-color: transparent;
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
+/* Hide scrollbars but allow scrolling */
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+.no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+/* --- E-INK OPTIMIZATIONS --- */
+/* Applied when .e-ink-optimized class is on the body */
+.e-ink-optimized {
+    --eink-black: #000000;
+    --eink-white: #ffffff;
+    background-color: var(--eink-white) !important;
+    color: var(--eink-black) !important;
+}
+
+/* 1. Eliminate Ghosting: Kill all animations and transitions */
+.e-ink-optimized * {
+    transition: none !important;
+    animation: none !important;
+}
+
+/* 2. High Contrast: No shadows, no gradients */
+.e-ink-optimized * {
+    box-shadow: none !important;
+    text-shadow: none !important;
+    background-image: none !important;
+}
+
+/* 3. Image Optimization: High contrast grayscale */
+.e-ink-optimized img,
+.e-ink-optimized video {
+    filter: grayscale(100%) contrast(125%) brightness(105%);
+    mix-blend-mode: multiply;
+}
+
+/* 4. Color Flattening: Force functional colors to black/white */
+.e-ink-optimized .text-blue-600,
+.e-ink-optimized .text-blue-500,
+.e-ink-optimized .text-slate-500,
+.e-ink-optimized .text-gray-500,
+.e-ink-optimized .text-gray-400 {
+    color: var(--eink-black) !important;
+}
+
+.e-ink-optimized .bg-blue-600,
+.e-ink-optimized .bg-blue-500,
+.e-ink-optimized .bg-black {
+    background-color: var(--eink-black) !important;
+    color: var(--eink-white) !important;
+}
+
+.e-ink-optimized .bg-slate-50,
+.e-ink-optimized .bg-gray-50 {
+    background-color: var(--eink-white) !important;
+}
+
+/* 5. Borders: Make them thick and solid for visibility */
+.e-ink-optimized .border-b,
+.e-ink-optimized .border-r,
+.e-ink-optimized .border {
+    border-color: var(--eink-black) !important;
+    border-width: 2px !important;
+    border-style: solid !important;
+}
+
+/* 6. Typography Overrides */
+.e-ink-optimized a {
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    color: var(--eink-black) !important;
+    font-weight: 600;
+}
+
+/* Make prose text strictly black */
+.e-ink-optimized .prose {
+    color: var(--eink-black) !important;
+}
+
+.e-ink-optimized .prose blockquote {
+    border-left-color: var(--eink-black) !important;
+    color: var(--eink-black) !important;
+}
+
+.e-ink-optimized .prose strong,
+.e-ink-optimized .prose h1,
+.e-ink-optimized .prose h2,
+.e-ink-optimized .prose h3 {
+    color: var(--eink-black) !important;
+}
