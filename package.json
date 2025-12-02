@@ -1,7 +1,7 @@
 {
   "name": "rss-flow",
   "private": true,
-  "version": "0.1.1",
+  "version": "0.1.0",
   "description": "A modern, distraction-free RSS reader with E-ink optimization and AI-powered summarization.",
   "keywords": [
     "rss-reader",
